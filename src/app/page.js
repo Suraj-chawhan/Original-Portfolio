@@ -108,11 +108,12 @@ export default function CharacterCanvas() {
         });
 
         const responseText = await res1.text();
+        const val=responseText? responseText:"Hello there ! I am suraj chauhan Ai assistant"
 
         const res2 = await fetch(`${process.env.NEXT_PUBLIC_PYTHON_URL}/ask`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ prompt: responseText }),
+          body: JSON.stringify({ prompt: val }),
         });
 
         const blob = await res2.blob();
