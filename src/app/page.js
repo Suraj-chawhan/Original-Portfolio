@@ -124,7 +124,7 @@ export default function CharacterCanvas() {
           body: JSON.stringify({ prompt: text }),
         });
 
-        const responseText = await res1.text();
+        const responseText = await res1.output;
 
         const res2 = await fetch(`${process.env.NEXT_PUBLIC_PYTHON_URL}/ask`, {
           method: "POST",
