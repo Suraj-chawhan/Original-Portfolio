@@ -41,7 +41,7 @@ export default function Contact() {
     const payload = { name, email, message };
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_N_URL}/send`, {
+      const res = await fetch(`https://portfolio-node-backend-latest.vercel.app/send`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
