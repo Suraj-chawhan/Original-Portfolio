@@ -118,7 +118,7 @@ export default function CharacterCanvas() {
       console.log("User said:", text);
 
       try {
-        const res1 = await fetch(`${process.env.NEXT_PUBLIC_N_URL}/chat`, {
+        const res1 = await fetch(`https://portfolio-node-backend-latest.vercel.app/chat`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ prompt: text }),
@@ -128,7 +128,7 @@ export default function CharacterCanvas() {
         const responseText =
           res1Data.output || "Hello there! I am Suraj Chauhan AI assistant";
 
-        const res2 = await fetch(`${process.env.NEXT_PUBLIC_P_URL}/ask`, {
+        const res2 = await fetch(`https://portfolio-python-backend.vercel.app/ask`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ prompt: responseText }),
