@@ -121,7 +121,7 @@ export default function CharacterCanvas() {
         const res1 = await fetch(`https://portfolio-node-backend-latest.vercel.app/chat`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ prompt: text }),
+          body: JSON.stringify({ question: text }),
         });
 
         const res1Data = await res1.json();
